@@ -6,10 +6,20 @@ public class Plunger : MonoBehaviour
 {
 	[SerializeField]
 	GameObject ball;
+    public GameObject GetBall() { return ball; }
+    public void SetBall(GameObject g1) { ball = g1; }
 	Rigidbody rb;
 	float forceMagnitude = 0;
-	// Use this for initialization
-	void Start () 
+    public float GetForceMagnitude()
+    {
+        return forceMagnitude;
+    }
+    public void SetForceMagnitude(float x)
+    {
+        forceMagnitude = x;
+    }
+    // Use this for initialization
+    void Start () 
 	{
 		rb = GetComponent<Rigidbody>();
 	}
@@ -21,9 +31,9 @@ public class Plunger : MonoBehaviour
 		{
 			forceMagnitude += .5f;
 		}
-		if (Input.GetKeyUp(KeyCode.DownArrow))
-		{
-			ball.GetComponent<Rigidbody>().AddForce(Vector3.up * forceMagnitude);
-		}
+        if (Input.GetKeyUp(KeyCode.DownArrow) && (forceMagnitude != 0.0f))
+        {
+            ball.GetComponent<Rigidbody>().AddForce(Vector3.up * forceMagnitude);
+        }
 	}
 }
