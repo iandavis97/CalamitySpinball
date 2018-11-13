@@ -20,7 +20,7 @@ public class BallManager : MonoBehaviour
 	void Update ()
     {
         //given current prototype code, ball resets to plunger location if above bounds
-        if ((ball!=null)&&((ball.transform.position.y < bounds.transform.position.y)))
+        if ((ball!=null)&&((ball.transform.position.y >= bounds.transform.position.y)))
         {
             Destroy(ball);//destroying ball when out of bounds
         }
@@ -29,10 +29,7 @@ public class BallManager : MonoBehaviour
         if (ball == null)
         {
             ball = CreateBall();
-            if (plunger != null)
-            {
-                plunger.GetComponent<Plunger>().SetBall(ball);//lets plunger know about new ball
-            }
+            plunger.GetComponent<Plunger>().SetBall(ball);//lets plunger know about new ball
         }
             
 	}
