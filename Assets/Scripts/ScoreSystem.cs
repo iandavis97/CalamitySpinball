@@ -48,7 +48,7 @@ public class ScoreSystem : MonoBehaviour {
 	public static void IncreaseScore(int amount)
 	{
 
-		score += amount*multiplier;
+		score += (int)(amount*multiplier);
 
 	}
 
