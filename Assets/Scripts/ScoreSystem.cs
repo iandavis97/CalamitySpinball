@@ -9,8 +9,9 @@ public class ScoreSystem : MonoBehaviour {
 	private static int timerEnd = 0;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        
 	}
 	
 	// Update is called once per frame
@@ -18,7 +19,6 @@ public class ScoreSystem : MonoBehaviour {
 
 		if (System.DateTime.Today.Second >= timerEnd && timerEnd!=-1)
 			multiplier = 1;
-
 	}
 
 	public static int Score{
@@ -49,7 +49,6 @@ public class ScoreSystem : MonoBehaviour {
 	{
 
 		score += (int)(amount*multiplier);
-
 	}
 
 	/// <summary>

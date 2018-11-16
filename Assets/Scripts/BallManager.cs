@@ -29,7 +29,7 @@ public class BallManager : MonoBehaviour
         if (ball == null)
         {
             ball = CreateBall();
-            plunger.GetComponent<Plunger>().SetBall(ball);//lets plunger know about new ball
+            //plunger.GetComponent<Plunger>().SetBall(ball);//lets plunger know about new ball
         }
             
 	}
