@@ -20,10 +20,10 @@ public class PaddleBehavior : Behavior {
 	}
 
     // Update is called once per frame
-    void LateUpdate() {
+    void FixedUpdate() {
         if (active)
         {
-            lerp += Time.deltaTime / UpPeriod;
+            lerp += Time.fixedDeltaTime / UpPeriod;
             if (lerp > 1)
             {
                 lerp = 1;
@@ -32,7 +32,7 @@ public class PaddleBehavior : Behavior {
         }
         else
         {
-            lerp -= Time.deltaTime / DownPeriod;
+            lerp -= Time.fixedDeltaTime / DownPeriod;
             if (lerp < 0)
             {
                 lerp = 0;

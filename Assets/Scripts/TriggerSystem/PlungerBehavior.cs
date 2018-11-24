@@ -21,15 +21,15 @@ public class PlungerBehavior : Behavior {
 	}
 
     // Update is called once per frame
-    void LateUpdate() {
+    void FixedUpdate() {
         if (!released)
         {
-            rigid.MovePosition(Vector3.MoveTowards(transform.position, BackPos.position, Time.deltaTime * PullSpeed));
+            rigid.MovePosition(Vector3.MoveTowards(transform.position, BackPos.position, Time.fixedDeltaTime * PullSpeed));
             high = transform.position;
         }
         else
         {
-            lerp -= Time.deltaTime / ReleasePeriod;
+            lerp -= Time.fixedDeltaTime / ReleasePeriod;
             if (lerp < 0)
             {
                 lerp = 0;
@@ -46,6 +46,9 @@ public class PlungerBehavior : Behavior {
             lerp = 1;
             released = false;
             high = transform.position;
+            // Confuse Unity so that it does physics right
+            gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
     }
 
