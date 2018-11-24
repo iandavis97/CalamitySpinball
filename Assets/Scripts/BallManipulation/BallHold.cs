@@ -11,7 +11,9 @@ public class BallHold : Detector {
     public Transform HoldPosition;
 
     // Velocity the ball is released with
-    public Vector3 ReleaseVelocity;
+    public Transform ReleaseAim;
+
+    public float ReleaseSpeed;
 
     // The held ball's rigidbody
     private Rigidbody held;
@@ -61,7 +63,7 @@ public class BallHold : Detector {
     public void Release()
     {
         held.isKinematic = false;
-        held.velocity = ReleaseVelocity;
+        held.velocity = (ReleaseAim.position - transform.position).normalized * ReleaseSpeed;
         held = null;
     }
 
