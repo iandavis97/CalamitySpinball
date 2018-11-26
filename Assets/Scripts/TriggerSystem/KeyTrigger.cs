@@ -13,9 +13,6 @@ public class KeyTrigger : Detector {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(Key))
-        {
-            Activate();
-        }
+        Activate(Input.GetKey(Key));
 	}
 }
