@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 4015072558143744}
   - component: {fileID: 65059825287545422}
   - component: {fileID: 114890444320825566}
-  - component: {fileID: 114862305254163338}
   m_Layer: 0
   m_Name: BumperObject
   m_TagString: Untagged
@@ -70,7 +69,7 @@ Transform:
   m_GameObject: {fileID: 1623009877146462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.251, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 1, z: 0.84995115}
+  m_LocalScale: {x: 0.02, y: 1, z: 0.72}
   m_Children:
   - {fileID: 4104076169541444}
   m_Father: {fileID: 4082475757317478}
@@ -82,14 +81,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322878391039200}
-  m_LocalRotation: {x: 0.01810331, y: 0.48238814, z: 0.012734136, w: 0.875678}
-  m_LocalPosition: {x: -4.299, y: -1.065, z: 1.941}
+  m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: -4.299, y: -1.065, z: 2.01}
   m_LocalScale: {x: 1, y: 0.5, z: 2.6432593}
   m_Children:
   - {fileID: 4015072558143744}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1.113, y: 57.721004, z: 2.2800002}
+  m_LocalEulerAnglesHint: {x: 0, y: -60, z: 0}
 --- !u!4 &4104076169541444
 Transform:
   m_ObjectHideFlags: 1
@@ -151,7 +150,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322878391039200}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7fa0fed66892b124cb2493f854fe9ed1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -171,19 +170,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114862305254163338
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623009877146462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deef7e3b0fdfa944e937bf55a8edd671, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 6.5
-  direction: {fileID: 1329313660567416}
 --- !u!114 &114890444320825566
 MonoBehaviour:
   m_ObjectHideFlags: 1
