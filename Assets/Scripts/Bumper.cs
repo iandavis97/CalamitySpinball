@@ -6,6 +6,7 @@ public class Bumper : MonoBehaviour {
 	[SerializeField]
 	float force;
     AudioSource sound;
+    public int scoreToAdd;
 
     // Use this for initialization
     void Start () 
@@ -25,5 +26,6 @@ public class Bumper : MonoBehaviour {
 		other.gameObject.GetComponent<Rigidbody>().AddForce(forceDir, ForceMode.Impulse);
         if (sound.isPlaying == false)
             sound.Play();
+        ScoreSystem.IncreaseScore(scoreToAdd);
 	}
 }
