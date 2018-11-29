@@ -20,7 +20,7 @@ public class BallManager : MonoBehaviour
 	void Update ()
     {
         //given current prototype code, ball resets to plunger location if above bounds
-        if ((ball!=null)&&((ball.transform.position.y >= bounds.transform.position.y)))
+        if ((ball!=null)&&((ball.transform.position.y <= bounds.transform.position.y)))
         {
             Destroy(ball);//destroying ball when out of bounds
         }
