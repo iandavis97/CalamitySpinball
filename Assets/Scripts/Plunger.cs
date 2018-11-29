@@ -10,6 +10,7 @@ public class Plunger : MonoBehaviour
     public void SetBall(GameObject g1) { ball = g1; }
 	Rigidbody rb;
 	float forceMagnitude = 0;
+    AudioSource sound;
     public float GetForceMagnitude()
     {
         return forceMagnitude;
@@ -22,6 +23,7 @@ public class Plunger : MonoBehaviour
     void Start () 
 	{
 		rb = GetComponent<Rigidbody>();
+        sound = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -34,6 +36,8 @@ public class Plunger : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.DownArrow) && (forceMagnitude != 0.0f))
         {
             ball.GetComponent<Rigidbody>().AddForce(Vector3.up * forceMagnitude);
+            if (sound.isPlaying == false)
+                sound.Play();
         }
 	}
 }

@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreSystem : MonoBehaviour {
 
 	private static int score=0;
 	private static float multiplier=1;
 	private static int timerEnd = 0;
+    public GameObject manager;//reference to manager script attached to, to get text
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        
 	}
 	
 	// Update is called once per frame
@@ -18,7 +21,7 @@ public class ScoreSystem : MonoBehaviour {
 
 		if (System.DateTime.Today.Second >= timerEnd && timerEnd!=-1)
 			multiplier = 1;
-
+        manager.GetComponent<Text>().text = score.ToString();//displaying the score
 	}
 
 	public static int Score{
@@ -49,7 +52,6 @@ public class ScoreSystem : MonoBehaviour {
 	{
 
 		score += (int)(amount*multiplier);
-
 	}
 
 	/// <summary>
