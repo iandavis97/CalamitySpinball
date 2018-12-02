@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23465213231313320}
   - component: {fileID: 135153458474821550}
   - component: {fileID: 54462361196522304}
+  - component: {fileID: 114477985232456374}
   m_Layer: 0
   m_Name: Pinball
   m_TagString: Ball
@@ -36,8 +37,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1726542306702006}
-  m_LocalRotation: {x: -0.0067790393, y: 0.04003565, z: 0.16681099, w: 0.9851525}
-  m_LocalPosition: {x: -0.86, y: 0.149, z: -3.89}
+  m_LocalRotation: {x: -0, y: -0, z: 0.020785747, w: 0.99978393}
+  m_LocalPosition: {x: -5.16, y: -1.15, z: -4.768}
   m_LocalScale: {x: 0.31119156, y: 0.32815486, z: 0.3190767}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,13 +101,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &114477985232456374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726542306702006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4602eecff73695d42a5e420ee8da8481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Grav: {x: -8, y: 0, z: 0}
 --- !u!135 &135153458474821550
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1726542306702006}
-  m_Material: {fileID: 13400000, guid: 4794f0e134a64004289772a561e561ba, type: 2}
+  m_Material: {fileID: 13400000, guid: e3fade6607b59114d87f05b47024c905, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
