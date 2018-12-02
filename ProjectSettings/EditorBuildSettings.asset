@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Title_Screen.unity
+    guid: 7c51bf80d33c87c479524cee6a28ec6a
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 3a627f781f81b6043b914afa798a836f
+  - enabled: 1
+    path: Assets/Scenes/Victory_Screen.unity
+    guid: 5c642ce1dcd77c348a676ce27bd59f28
+  - enabled: 1
+    path: Assets/Scenes/DugalsTable.unity
+    guid: 3c498fbefd2a77c4788eddeaad4c116e
+  - enabled: 1
+    path: Assets/Scenes/SpaceBoard.unity
+    guid: a7899756ded8a8c499656a6a9b7566f7
   m_configObjects: {}
