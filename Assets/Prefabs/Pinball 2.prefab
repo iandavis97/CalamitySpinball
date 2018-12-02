@@ -9,33 +9,34 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1726542306702006}
+  m_RootGameObject: {fileID: 1805250599530972}
   m_IsPrefabAsset: 1
---- !u!1 &1726542306702006
+--- !u!1 &1805250599530972
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4091968481636886}
-  - component: {fileID: 33795312333543958}
-  - component: {fileID: 23465213231313320}
-  - component: {fileID: 135153458474821550}
-  - component: {fileID: 54462361196522304}
+  - component: {fileID: 4150709907694076}
+  - component: {fileID: 33247230752853204}
+  - component: {fileID: 23865611418651130}
+  - component: {fileID: 135101556093296458}
+  - component: {fileID: 54336489450970042}
+  - component: {fileID: 114329575672225942}
   m_Layer: 0
-  m_Name: Pinball
+  m_Name: Pinball 2
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4091968481636886
+--- !u!4 &4150709907694076
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726542306702006}
+  m_GameObject: {fileID: 1805250599530972}
   m_LocalRotation: {x: -0, y: -0, z: 0.020785747, w: 0.99978393}
   m_LocalPosition: {x: -5.16, y: -1.15, z: -4.768}
   m_LocalScale: {x: 0.31119156, y: 0.32815486, z: 0.3190767}
@@ -43,12 +44,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -1.531, y: 4.3960004, z: 19.162}
---- !u!23 &23465213231313320
+--- !u!23 &23865611418651130
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726542306702006}
+  m_GameObject: {fileID: 1805250599530972}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -78,19 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33795312333543958
+--- !u!33 &33247230752853204
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726542306702006}
+  m_GameObject: {fileID: 1805250599530972}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54462361196522304
+--- !u!54 &54336489450970042
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726542306702006}
+  m_GameObject: {fileID: 1805250599530972}
   serializedVersion: 2
   m_Mass: 0.1
   m_Drag: 0
@@ -100,12 +101,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!135 &135153458474821550
+--- !u!114 &114329575672225942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805250599530972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4602eecff73695d42a5e420ee8da8481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Grav: {x: -8, y: 0, z: 0}
+--- !u!135 &135101556093296458
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726542306702006}
+  m_GameObject: {fileID: 1805250599530972}
   m_Material: {fileID: 13400000, guid: e3fade6607b59114d87f05b47024c905, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
