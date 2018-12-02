@@ -852,7 +852,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: -60, z: 0}
 --- !u!1 &485852935 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1726542306702006, guid: 15d04a208d0054e4eb1209ae56a7365f,
+  m_CorrespondingSourceObject: {fileID: 1805250599530972, guid: 5460d717f7b25f740b138777db371428,
     type: 2}
   m_PrefabInternal: {fileID: 1285599651}
 --- !u!1 &565697231
@@ -2919,40 +2919,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4091968481636886, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+    - target: {fileID: 4150709907694076, guid: 5460d717f7b25f740b138777db371428, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5.16
       objectReference: {fileID: 0}
-    - target: {fileID: 4091968481636886, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+    - target: {fileID: 4150709907694076, guid: 5460d717f7b25f740b138777db371428, type: 2}
       propertyPath: m_LocalPosition.y
       value: -1.15
       objectReference: {fileID: 0}
-    - target: {fileID: 4091968481636886, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+    - target: {fileID: 4150709907694076, guid: 5460d717f7b25f740b138777db371428, type: 2}
       propertyPath: m_LocalPosition.z
       value: -4.768
       objectReference: {fileID: 0}
-    - target: {fileID: 4091968481636886, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+    - target: {fileID: 4150709907694076, guid: 5460d717f7b25f740b138777db371428, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4091968481636886, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+    - target: {fileID: 4150709907694076, guid: 5460d717f7b25f740b138777db371428, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4091968481636886, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+    - target: {fileID: 4150709907694076, guid: 5460d717f7b25f740b138777db371428, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0.020785747
       objectReference: {fileID: 0}
-    - target: {fileID: 4091968481636886, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+    - target: {fileID: 4150709907694076, guid: 5460d717f7b25f740b138777db371428, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.99978393
       objectReference: {fileID: 0}
-    - target: {fileID: 4091968481636886, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+    - target: {fileID: 4150709907694076, guid: 5460d717f7b25f740b138777db371428, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1805250599530972, guid: 5460d717f7b25f740b138777db371428, type: 2}
+      propertyPath: m_Name
+      value: Pinball
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 5460d717f7b25f740b138777db371428, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1314033852
 GameObject:
@@ -3536,7 +3540,7 @@ MonoBehaviour:
   ball: {fileID: 485852935}
   bounds: {fileID: 1267788370}
   plunger: {fileID: 1314033852}
-  ballPrefab: {fileID: 1726542306702006, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+  ballPrefab: {fileID: 1805250599530972, guid: 5460d717f7b25f740b138777db371428, type: 2}
 --- !u!4 &1667162346
 Transform:
   m_ObjectHideFlags: 0
