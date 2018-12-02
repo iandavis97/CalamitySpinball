@@ -5641,7 +5641,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9ab84a4c729e45d40b9f86d04301bc70, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -10298,7 +10298,7 @@ MonoBehaviour:
   RestPos: {fileID: 2042017912}
   BackPos: {fileID: 726756390}
   ReleasePeriod: 0.1
-  PullSpeed: 10
+  PullSpeed: 2
 --- !u!1 &716517114
 GameObject:
   m_ObjectHideFlags: 0
@@ -17831,7 +17831,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9ab84a4c729e45d40b9f86d04301bc70, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
