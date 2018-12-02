@@ -8,19 +8,19 @@ public class BallManager : MonoBehaviour
     public GameObject bounds;
     public GameObject plunger;
     public GameObject ballPrefab;//used to generate new balls
-    Transform ballTransform;//position of ball at plunger for new balls to reference
+    Vector3 ballTransform;//position of ball at plunger for new balls to reference
 
 	// Use this for initialization
 	void Start ()
     {
-        ballTransform = ball.transform;
+        ballTransform = ball.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         //given current prototype code, ball resets to plunger location if above bounds
-        if ((ball!=null)&&((ball.transform.position.y >= bounds.transform.position.y)))
+        if ((ball!=null)&&((ball.transform.position.y <= bounds.transform.position.y)))
         {
             Destroy(ball);//destroying ball when out of bounds
         }
@@ -41,7 +41,8 @@ public class BallManager : MonoBehaviour
     {
         GameObject temp;
         //should generate a new ball for when another is destroyed
-        temp=Instantiate(ballPrefab, ballTransform);
+        temp=Instantiate(ballPrefab);
+        temp.transform.position = ballTransform;
         return temp;
     }
 }

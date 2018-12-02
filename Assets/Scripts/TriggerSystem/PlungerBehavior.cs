@@ -36,7 +36,6 @@ public class PlungerBehavior : Behavior {
             }
             rigid.MovePosition(Vector3.Lerp(RestPos.position, high, lerp));
         }
-        released = true;
     }
 
     public override void Activate()
@@ -55,6 +54,10 @@ public class PlungerBehavior : Behavior {
     public override void Activate(bool args)
     {
         released = !args;
+        if(args)
+        {
+            Activate();
+        }
     }
 
     public override void Activate(int args)

@@ -27,7 +27,6 @@ public class PaddleBehavior : Behavior {
             if (lerp > 1)
             {
                 lerp = 1;
-                active = false;
             }
         }
         else

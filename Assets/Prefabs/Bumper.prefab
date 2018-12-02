@@ -22,11 +22,8 @@ GameObject:
   - component: {fileID: 33009958394530824}
   - component: {fileID: 23367016913732744}
   - component: {fileID: 114441023766460514}
-<<<<<<< HEAD
-  - component: {fileID: 82213788296790494}
-=======
   - component: {fileID: 64076981040418656}
->>>>>>> e7cd39f63e55c43967c5b44fa4c88d3d8616fc3e
+  - component: {fileID: 82278420312079982}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -89,23 +86,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773668254707082}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
---- !u!82 &82213788296790494
-AudioSource:
-=======
 --- !u!64 &64076981040418656
 MeshCollider:
->>>>>>> e7cd39f63e55c43967c5b44fa4c88d3d8616fc3e
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773668254707082}
-<<<<<<< HEAD
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &82278420312079982
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773668254707082}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9ab84a4c729e45d40b9f86d04301bc70, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -190,16 +195,6 @@ MeshCollider:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> e7cd39f63e55c43967c5b44fa4c88d3d8616fc3e
 --- !u!114 &114441023766460514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,3 +207,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 6.5
+  scoreToAdd: 0

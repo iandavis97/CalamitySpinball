@@ -789,7 +789,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485750577}
-  m_Material: {fileID: 13400000, guid: 7fa0fed66892b124cb2493f854fe9ed1, type: 2}
+  m_Material: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1317,7 +1317,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 909082307}
-  m_Material: {fileID: 13400000, guid: 410cbb25bcdfe4f439f97e7844b1e5b5, type: 2}
+  m_Material: {fileID: 13400000, guid: 8931caf51f89df446b86c2dd5545cd2d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2069,7 +2069,7 @@ CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1057731348}
-  m_Material: {fileID: 13400000, guid: 7fa0fed66892b124cb2493f854fe9ed1, type: 2}
+  m_Material: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
@@ -2429,7 +2429,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171850751}
-  m_Material: {fileID: 13400000, guid: 7fa0fed66892b124cb2493f854fe9ed1, type: 2}
+  m_Material: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2533,6 +2533,18 @@ Prefab:
       propertyPath: m_Name
       value: Slingshot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 64842169353829968, guid: 84dea0ffda4a7c84bae21b405c5d8bac,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10,
+        type: 2}
+    - target: {fileID: 65059825287545422, guid: 84dea0ffda4a7c84bae21b405c5d8bac,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84dea0ffda4a7c84bae21b405c5d8bac, type: 2}
   m_IsPrefabAsset: 0
@@ -2662,7 +2674,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1222121571}
-  m_Material: {fileID: 13400000, guid: 410cbb25bcdfe4f439f97e7844b1e5b5, type: 2}
+  m_Material: {fileID: 13400000, guid: 8931caf51f89df446b86c2dd5545cd2d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2747,7 +2759,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1236118942}
-  m_Material: {fileID: 13400000, guid: 7fa0fed66892b124cb2493f854fe9ed1, type: 2}
+  m_Material: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2934,6 +2946,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 135153458474821550, guid: 15d04a208d0054e4eb1209ae56a7365f,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e3fade6607b59114d87f05b47024c905,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
   m_IsPrefabAsset: 0
@@ -2997,7 +3015,7 @@ BoxCollider:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1314033852}
-  m_Material: {fileID: 13400000, guid: 4794f0e134a64004289772a561e561ba, type: 2}
+  m_Material: {fileID: 13400000, guid: 9e7d7e866eef02a469f2387fec43103a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3099,7 +3117,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1322225818}
-  m_Material: {fileID: 13400000, guid: 7fa0fed66892b124cb2493f854fe9ed1, type: 2}
+  m_Material: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3865,7 +3883,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1826775297}
-  m_Material: {fileID: 13400000, guid: 7fa0fed66892b124cb2493f854fe9ed1, type: 2}
+  m_Material: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4519,6 +4537,18 @@ Prefab:
       propertyPath: m_Name
       value: Slingshot
       objectReference: {fileID: 0}
+    - target: {fileID: 64842169353829968, guid: 84dea0ffda4a7c84bae21b405c5d8bac,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10,
+        type: 2}
+    - target: {fileID: 65059825287545422, guid: 84dea0ffda4a7c84bae21b405c5d8bac,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f21b90d12b30d824c841fa0dae5b1c10,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84dea0ffda4a7c84bae21b405c5d8bac, type: 2}
   m_IsPrefabAsset: 0
