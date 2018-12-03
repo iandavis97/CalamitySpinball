@@ -96,8 +96,8 @@ public class ScoreSystem : MonoBehaviour {
     //creates space to display the score
     void OnGUI()
     {
-        GUIStyle size = new GUIStyle();//used to modify text size
-        size.fontSize = 100;
-        GUI.Label(new Rect(10, 10, 100, 20), Score.ToString(),size);
+        GUIStyle style = new GUIStyle();//used to modify text size
+        style.fontSize = 50;
+        GUI.Label(new Rect(10, 10, 100, 20), Score.ToString(),style);
     }
 }
