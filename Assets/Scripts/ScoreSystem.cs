@@ -8,7 +8,7 @@ public class ScoreSystem : MonoBehaviour {
 	private static int score=0;
 	private static float multiplier=1;
 	private static int timerEnd = 0;
-    public GameObject manager;//reference to manager script attached to, to get text
+    //public GameObject manager;//reference to manager script attached to, to get text
 
 	// Use this for initialization
 	void Start ()
@@ -21,7 +21,7 @@ public class ScoreSystem : MonoBehaviour {
 
 		if (System.DateTime.Today.Second >= timerEnd && timerEnd!=-1)
 			multiplier = 1;
-        manager.GetComponent<Text>().text = score.ToString();//displaying the score
+        //manager.GetComponent<Text>().text = score.ToString();//displaying the score
 	}
 
 	public static int Score{
@@ -51,7 +51,7 @@ public class ScoreSystem : MonoBehaviour {
 	public static void IncreaseScore(int amount)
 	{
 
-		score += (int)(amount*multiplier);
+		Score += (int)(amount*multiplier);
 	}
 
 	/// <summary>
@@ -92,4 +92,12 @@ public class ScoreSystem : MonoBehaviour {
 			timerEnd = -1;
 
 	}
+
+    //creates space to display the score
+    void OnGUI()
+    {
+        GUIStyle style = new GUIStyle();//used to modify text size
+        style.fontSize = 50;
+        GUI.Label(new Rect(10, 10, 100, 20), Score.ToString(),style);
+    }
 }
