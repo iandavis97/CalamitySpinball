@@ -7,6 +7,7 @@ public class SlingShot : MonoBehaviour {
 	float force;
 	[SerializeField]
 	GameObject direction;
+    public int scoreToAdd;
 	// Use this for initialization
 	void Start () 
 	{
@@ -24,5 +25,6 @@ public class SlingShot : MonoBehaviour {
 		float dis = Vector3.Distance(other.collider.gameObject.transform.position,gameObject.transform.position)/2.6f;
 		Vector3 forceDir = Vector3.Normalize(direction.transform.position - this.transform.position) * force;
 		other.gameObject.GetComponent<Rigidbody>().AddForce(forceDir, ForceMode.Impulse);
+        ScoreSystem.IncreaseScore(scoreToAdd);
 	}
 }
