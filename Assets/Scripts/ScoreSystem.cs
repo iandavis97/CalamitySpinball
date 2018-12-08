@@ -98,6 +98,7 @@ public class ScoreSystem : MonoBehaviour {
     {
         GUIStyle style = new GUIStyle();//used to modify text size
         style.fontSize = 50;
+        style.normal.textColor = Color.white;
         GUI.Label(new Rect(10, 10, 100, 20), Score.ToString(),style);
     }
 }
