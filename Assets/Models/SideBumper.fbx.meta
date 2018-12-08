@@ -41,10 +41,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
 <<<<<<< HEAD
+<<<<<<< HEAD
     globalScale: 50
 =======
     globalScale: 1
 >>>>>>> 1675d1c9db745f142454d2466c3838e2f525674a
+=======
+    globalScale: 1
+>>>>>>> 1cf5ae4da013720b0ddcc067feb989482909a06b
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
