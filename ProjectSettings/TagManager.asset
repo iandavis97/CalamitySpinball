@@ -8,6 +8,7 @@ TagManager:
   - MessageDisplay
   - BallsDisplay
   - ScoreDisplay
+  - BallManager
   layers:
   - Default
   - TransparentFX
