@@ -132,21 +132,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300014, guid: cc04f9adf553d0f4bae2c711caa36499, type: 3}
-<<<<<<< HEAD
---- !u!1 &119573054
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 100012, guid: 40bd78d5ea2e7c3408e7c2eb83ae84ec,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 119573055}
-  - component: {fileID: 119573057}
-  - component: {fileID: 119573056}
-  m_Layer: 0
-  m_Name: UFO_cockpit
-=======
 --- !u!1 &95572772
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,12 +143,12 @@ GameObject:
   - component: {fileID: 95572775}
   m_Layer: 0
   m_Name: ScoreManager
->>>>>>> 7cff7f526abc1b8b9e5c619ea13ac27e9600d5a8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!4 &95572773
 Transform:
@@ -228,6 +213,8 @@ MeshFilter:
   m_GameObject: {fileID: 119573054}
   m_Mesh: {fileID: 4300002, guid: 40bd78d5ea2e7c3408e7c2eb83ae84ec, type: 3}
 =======
+=======
+>>>>>>> b8552ffcb10ece521f97ec2dcdd7c73c546043fc
 --- !u!222 &95572774
 CanvasRenderer:
 >>>>>>> 1cf5ae4da013720b0ddcc067feb989482909a06b
@@ -273,8 +260,11 @@ RectTransform:
   m_AnchoredPosition: {x: 16.145569, y: -37.51315}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 >>>>>>> 7cff7f526abc1b8b9e5c619ea13ac27e9600d5a8
 >>>>>>> 1cf5ae4da013720b0ddcc067feb989482909a06b
+=======
+>>>>>>> b8552ffcb10ece521f97ec2dcdd7c73c546043fc
 --- !u!1 &122263440
 GameObject:
   m_ObjectHideFlags: 0
