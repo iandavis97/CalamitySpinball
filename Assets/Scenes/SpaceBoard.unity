@@ -132,21 +132,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300014, guid: cc04f9adf553d0f4bae2c711caa36499, type: 3}
-<<<<<<< HEAD
---- !u!1 &119573054
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 100012, guid: 40bd78d5ea2e7c3408e7c2eb83ae84ec,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 119573055}
-  - component: {fileID: 119573057}
-  - component: {fileID: 119573056}
-  m_Layer: 0
-  m_Name: UFO_cockpit
-=======
 --- !u!1 &95572772
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,72 +144,11 @@ GameObject:
   - component: {fileID: 95572774}
   m_Layer: 0
   m_Name: ScoreManager
->>>>>>> 7cff7f526abc1b8b9e5c619ea13ac27e9600d5a8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
---- !u!4 &119573055
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 400012, guid: 40bd78d5ea2e7c3408e7c2eb83ae84ec,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 119573054}
-  m_LocalRotation: {x: 0, y: 0, z: -0.00000008742278, w: 1}
-  m_LocalPosition: {x: 0.000000003027916, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 377746296}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &119573056
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2300002, guid: 40bd78d5ea2e7c3408e7c2eb83ae84ec,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 119573054}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 40bd78d5ea2e7c3408e7c2eb83ae84ec, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &119573057
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 3300002, guid: 40bd78d5ea2e7c3408e7c2eb83ae84ec,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 119573054}
-  m_Mesh: {fileID: 4300002, guid: 40bd78d5ea2e7c3408e7c2eb83ae84ec, type: 3}
-=======
 --- !u!222 &95572774
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -261,7 +185,6 @@ RectTransform:
   m_AnchoredPosition: {x: 16.145569, y: -37.51315}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
->>>>>>> 7cff7f526abc1b8b9e5c619ea13ac27e9600d5a8
 --- !u!1 &122263440
 GameObject:
   m_ObjectHideFlags: 0
