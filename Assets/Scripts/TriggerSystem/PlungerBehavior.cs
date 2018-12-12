@@ -25,12 +25,19 @@ public class PlungerBehavior : Behavior {
         rigid.velocity = Vector3.zero;
         if (!released)
         {
-            if (Vector3.Dot(BackPos.position - transform.position, BackPos.position - RestPos.position) > 0)
+            if (rigid.isKinematic)
             {
-                float speed = (BackPos.position - transform.position).magnitude;
-                speed = speed > PullSpeed ? PullSpeed : speed;
-                rigid.velocity = (BackPos.position - transform.position).normalized * PullSpeed;
-                high = transform.position;
+                rigid.MovePosition(Vector3.MoveTowards(transform.position, BackPos.position, Time.fixedDeltaTime * PullSpeed));
+            }
+            else
+            {
+                if (Vector3.Dot(BackPos.position - transform.position, BackPos.position - RestPos.position) > 0)
+                {
+                    float speed = (BackPos.position - transform.position).magnitude;
+                    speed = speed > PullSpeed ? PullSpeed : speed;
+                    rigid.velocity = (BackPos.position - transform.position).normalized * PullSpeed;
+                    high = transform.position;
+                }
             }
         }
         else
@@ -40,9 +47,13 @@ public class PlungerBehavior : Behavior {
             {
                 lerp = 0;
             }
-            else
+            else if (!rigid.isKinematic)
             {
                 rigid.velocity = (RestPos.position - high) / ReleasePeriod;
+            }
+            else
+            {
+                rigid.MovePosition(Vector3.Lerp(RestPos.position, high, lerp));
             }
         }
     }
