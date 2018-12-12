@@ -8,6 +8,7 @@ public abstract class Objective : MonoBehaviour {
     {
         Locked,
         Enabled,
+        JustFinished,
         Finished
     }
 
@@ -17,6 +18,8 @@ public abstract class Objective : MonoBehaviour {
     private List<Objective> dependants;
 
     public ObjectiveState State { get; private set; }
+
+    public float FinishSpan = .5f;
 
     private void Awake()
     {
@@ -37,19 +40,9 @@ public abstract class Objective : MonoBehaviour {
     // Declares the objective as complete to its dependants
     protected void Finish()
     {
-        if (dependants.Count > 0)
-        {
-            State = ObjectiveState.Finished;
-            for (int i = 0; i < dependants.Count; i++)
-            {
-                dependants[i].CheckPreReqs();
-            }
-        }
-        else
-        {
-            ResetObjectiveHierarchy();
-        }
+        State = ObjectiveState.JustFinished;
         OnStateChange();
+        StartCoroutine(DeferFinish());
     }
 
     // Check if prereqs are met
@@ -69,7 +62,7 @@ public abstract class Objective : MonoBehaviour {
     // Called by end points to reset the objectives
     private void ResetObjectiveHierarchy()
     {
-        if(PreReqs.Count < 0)
+        if(PreReqs.Count > 0)
         {
             for (int i = 0; i < PreReqs.Count; i++)
             {
@@ -81,7 +74,28 @@ public abstract class Objective : MonoBehaviour {
         {
             State = ObjectiveState.Enabled;
         }
+        OnStateChange();
+        OnReset();
+    }
+
+    private IEnumerator DeferFinish()
+    {
+        yield return new WaitForSeconds(FinishSpan);
+        if (dependants.Count > 0)
+        {
+            State = ObjectiveState.Finished;
+            for (int i = 0; i < dependants.Count; i++)
+            {
+                dependants[i].CheckPreReqs();
+            }
+        }
+        else
+        {
+            ResetObjectiveHierarchy();
+        }
+        OnStateChange();
     }
 
     protected abstract void OnStateChange();
+    protected abstract void OnReset();
 }

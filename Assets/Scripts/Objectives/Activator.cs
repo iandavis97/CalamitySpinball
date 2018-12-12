@@ -10,7 +10,14 @@ public class Activator : MonoBehaviour {
 
     public bool Reversible;
 
+    public bool UseMaterials;
+    public Material UnLit;
+    public Material Lit;
+
     public bool State { get; private set; }
+
+    public float FlashPeriod = .1f;
+    private float timer;
 
     private ActivatorGroup group;
 
@@ -18,15 +25,19 @@ public class Activator : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        Active.SetActive(State);
-        InActive.SetActive(!State);
         col = GetComponent<Collider>();
+        HardReset();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+		if(group.State == Objective.ObjectiveState.JustFinished)
+        {
+            timer = (timer + FlashPeriod - Time.deltaTime) % FlashPeriod;
+            bool on = timer < FlashPeriod / 2;
+            Active.GetComponent<Renderer>().material = on ? Lit : UnLit;
+        }
+    }
 
     public void SetGroup(ActivatorGroup group)
     {
@@ -36,9 +47,12 @@ public class Activator : MonoBehaviour {
     public void HardReset()
     {
         State = false;
-        Active.SetActive(State);
-        InActive.SetActive(!State);
-        Debug.Log("Reset");
+        if (!UseMaterials)
+        {
+            Active.SetActive(State);
+            InActive.SetActive(!State);
+        }
+        Active.GetComponent<Renderer>().material = State ? Lit : UnLit;
         col.enabled = true;
     }
 
@@ -61,8 +75,15 @@ public class Activator : MonoBehaviour {
     private void Hit()
     {
         State = Reversible ? !State : true;
-        Active.SetActive(State);
-        InActive.SetActive(!State);
+        if (!UseMaterials)
+        {
+            Active.SetActive(State);
+            InActive.SetActive(!State);
+        }
+        else
+        {
+            Active.GetComponent<Renderer>().material = State ? Lit : UnLit;
+        }
         group.Alert();
         col.enabled = State ? Reversible : true;
     }

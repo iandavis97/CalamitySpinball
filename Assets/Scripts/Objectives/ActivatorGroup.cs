@@ -37,12 +37,14 @@ public class ActivatorGroup : Objective {
 
     protected override void OnStateChange()
     {
-        if(State == ObjectiveState.Enabled)
+        
+    }
+
+    protected override void OnReset()
+    {
+        for (int i = 0; i < Children.Count; i++)
         {
-            for (int i = 0; i < Children.Count; i++)
-            {
-                Children[i].HardReset();
-            }
+            Children[i].HardReset();
         }
     }
 }

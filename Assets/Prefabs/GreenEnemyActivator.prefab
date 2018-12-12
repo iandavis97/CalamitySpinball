@@ -217,6 +217,10 @@ MonoBehaviour:
   Active: {fileID: 1800755237499170}
   InActive: {fileID: 1692495102543960}
   Reversible: 0
+  UseMaterials: 0
+  UnLit: {fileID: 2100000, guid: 6809042cc71d0ab4da0b1664fa7f6967, type: 3}
+  Lit: {fileID: 2100000, guid: c1183e810753c6547b7739a11041ab91, type: 2}
+  FlashPeriod: 0.2
 --- !u!136 &136217005461859402
 CapsuleCollider:
   m_ObjectHideFlags: 1
