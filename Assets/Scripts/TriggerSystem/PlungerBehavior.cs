@@ -22,10 +22,23 @@ public class PlungerBehavior : Behavior {
 
     // Update is called once per frame
     void FixedUpdate() {
+        rigid.velocity = Vector3.zero;
         if (!released)
         {
-            rigid.MovePosition(Vector3.MoveTowards(transform.position, BackPos.position, Time.fixedDeltaTime * PullSpeed));
-            high = transform.position;
+            if (rigid.isKinematic)
+            {
+                rigid.MovePosition(Vector3.MoveTowards(transform.position, BackPos.position, Time.fixedDeltaTime * PullSpeed));
+            }
+            else
+            {
+                if (Vector3.Dot(BackPos.position - transform.position, BackPos.position - RestPos.position) > 0)
+                {
+                    float speed = (BackPos.position - transform.position).magnitude;
+                    speed = speed > PullSpeed ? PullSpeed : speed;
+                    rigid.velocity = (BackPos.position - transform.position).normalized * PullSpeed;
+                    high = transform.position;
+                }
+            }
         }
         else
         {
@@ -34,8 +47,20 @@ public class PlungerBehavior : Behavior {
             {
                 lerp = 0;
             }
-            rigid.MovePosition(Vector3.Lerp(RestPos.position, high, lerp));
+            else if (!rigid.isKinematic)
+            {
+                rigid.velocity = (RestPos.position - high) / ReleasePeriod;
+            }
+            else
+            {
+                rigid.MovePosition(Vector3.Lerp(RestPos.position, high, lerp));
+            }
         }
+    }
+
+    public void MovePos()
+    {
+
     }
 
     public override void Activate()
@@ -45,9 +70,6 @@ public class PlungerBehavior : Behavior {
             lerp = 1;
             released = false;
             high = transform.position;
-            // Confuse Unity so that it does physics right
-            gameObject.SetActive(false);
-            gameObject.SetActive(true);
         }
     }
 
