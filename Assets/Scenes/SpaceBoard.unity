@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: {fileID: 8300000, guid: 1e0cab6b7666f74439911f56275900b5, type: 3}
   down: {fileID: 8300000, guid: 25ab74cdbd8f03143b3dea9765e3770a, type: 3}
+  ForceField: {fileID: 1170774993}
 --- !u!82 &26238885
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1550,7 +1551,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4858822163184554, guid: a4cbab522c3eed94e8e02a86bade6fca, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.057
+      value: -0.94
       objectReference: {fileID: 0}
     - target: {fileID: 4858822163184554, guid: a4cbab522c3eed94e8e02a86bade6fca, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3705,6 +3706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c776eb3e88bfd9e4b8faeb1bb18c7ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   hit: {fileID: 8300000, guid: 5c12509d0d0ab234f9e81481365e3a94, type: 3}
   down: {fileID: 8300000, guid: 2d5ee104be979af45becdfba52b5587a, type: 3}
 --- !u!82 &1170774999
