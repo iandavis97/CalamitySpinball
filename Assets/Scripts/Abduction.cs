@@ -13,9 +13,17 @@ public class Abduction : MonoBehaviour {
 	float abdTime = -20;
 	Vector3 abdPos;
 
+	public string[] abdMessages;
+
+	public static Abduction main; 
+
+	AudioSource audio;
+
 	// Use this for initialization
 	void Start () {
+		audio = gameObject.GetComponent<AudioSource> ();
 		light = gameObject.GetComponent<Light> ();
+		main = this;
 	}
 	
 	// Update is called once per frame
@@ -28,8 +36,11 @@ public class Abduction : MonoBehaviour {
 
 
 
-		if (abdTime >= -1 && abdTime - Time.deltaTime < -1)
+		if (abdTime >= -1 && abdTime - Time.deltaTime < -1) {
 			SpawnNewBall ();
+			GameObject music=GameObject.FindGameObjectWithTag ("Music");
+			music.GetComponent<AudioSource> ().Play();
+		}
 
 		abdTime -= Time.deltaTime;
 
@@ -41,10 +52,14 @@ public class Abduction : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 
 		if (other.gameObject.tag == "Ball" && active && !Captured()) {
-
+			audio.Play ();
+			GameObject music=GameObject.FindGameObjectWithTag ("Music");
+			music.GetComponent<AudioSource> ().Pause();
 			cBall=other.gameObject;
+			active = false;
 			abdTime = 4;
 			abdPos = cBall.transform.position;
+			ScoreSystem.MessageManager.SetMessage (abdMessages[Random.Range(0,abdMessages.Length)],5);
 		}
 
 	}
@@ -56,7 +71,14 @@ public class Abduction : MonoBehaviour {
 
 	}
 
-	bool Captured(){
+	public void DropBall(){
+		if (Captured()) {
+			cBall.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+			cBall = null;
+		}
+	}
+
+	public bool Captured(){
 
 		return !(cBall==null);
 

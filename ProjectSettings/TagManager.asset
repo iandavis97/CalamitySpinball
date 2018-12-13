@@ -9,6 +9,8 @@ TagManager:
   - BallsDisplay
   - ScoreDisplay
   - BallManager
+  - Star
+  - Music
   layers:
   - Default
   - TransparentFX

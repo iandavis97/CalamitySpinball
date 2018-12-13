@@ -14,7 +14,7 @@ public class TriggerSound : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Ball")
 			gameObject.GetComponent<AudioSource> ().Play ();

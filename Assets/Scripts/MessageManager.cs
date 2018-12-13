@@ -8,6 +8,8 @@ public class MessageManager : MonoBehaviour {
 	public GameObject MessageDisplay;
 	public GameObject ScoreDisplay;
 
+	public String eventMessage="";
+
 	public String defaultMessage;
 	String currentMessage;
 
@@ -30,7 +32,10 @@ public class MessageManager : MonoBehaviour {
 		messageTime -= Time.deltaTime;
 		if (messageTime < 0) {
 
-			message.text = defaultMessage;
+			if (eventMessage == "")
+				message.text = defaultMessage;
+			else
+				message.text = eventMessage;
 
 		}
 
@@ -51,6 +56,12 @@ public class MessageManager : MonoBehaviour {
 	public void ChangeBall(float ball){
 		ballV = Math.Min(ball,99);
 		UpdateScores ();
+	}
+
+	public void SetEventMessage (String s){
+		eventMessage = s.Substring(0, Math.Min(13, s.Length));;
+		if(message.text == defaultMessage)
+			message.text = eventMessage;
 	}
 
 	void UpdateScores(){

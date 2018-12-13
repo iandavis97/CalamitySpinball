@@ -46,9 +46,12 @@ public class StarLighting : MonoBehaviour {
 	}
 
 	void Switch() {
-
-		SetLit (!lit);
-
+		if (StarManager.changeAllowed)
+			SetLit (!lit);
+		else if (lit) {
+			ScoreSystem.IncreaseScore (400);
+			this.audio.Play ();
+		}
 	}
 
 	public void SetLit(bool l){

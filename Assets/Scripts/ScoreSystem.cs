@@ -10,7 +10,8 @@ public class ScoreSystem : MonoBehaviour {
 	private static float multiplier=1;
 	private static int timerEnd = 0;
     public GameObject manager;//reference to manager script attached to, to get text
-	static MessageManager messageManager;
+
+	public static MessageManager messageManager;
 
 	// Use this for initialization
 	void Start ()
@@ -36,6 +37,12 @@ public class ScoreSystem : MonoBehaviour {
 			messageManager.ChangeScore (score);
 		}
 	
+	}
+
+	public static MessageManager MessageManager {
+		get {
+			return messageManager;
+		}
 	}
 
 	public static int Ball {
