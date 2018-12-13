@@ -17,6 +17,7 @@ public class BallHold : Detector {
 
     // The held ball's rigidbody
     private Rigidbody held;
+    public bool Holding { get { return held != null; } }
 
     // The release timer
     private float timer;
@@ -55,7 +56,7 @@ public class BallHold : Detector {
     // Look for balls to lock
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Ball")
+        if(other.tag == "Ball" && this.isActiveAndEnabled && !Holding)
         {
             held = other.GetComponent<Rigidbody>();
             held.isKinematic = true;
@@ -68,6 +69,10 @@ public class BallHold : Detector {
     // Releases the ball
     public void Release()
     {
+        if(!Holding)
+        {
+            return;
+        }
         held.isKinematic = false;
         if (!isVelRandom)
         {
