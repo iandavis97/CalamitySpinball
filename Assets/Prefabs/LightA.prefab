@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4536815272445782}
   - component: {fileID: 114092893995370906}
   - component: {fileID: 65846640043864950}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LightA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4191541621948126}
   - component: {fileID: 33880081577564828}
   - component: {fileID: 23914242695006064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8773511, y: 7.4777045, z: 3.4041955}
+  m_Size: {x: 0.8773511, y: 7.4777045, z: 1.5}
   m_Center: {x: 0.0000071318045, y: 3.2388744, z: -0.02051251}
 --- !u!114 &114092893995370906
 MonoBehaviour:

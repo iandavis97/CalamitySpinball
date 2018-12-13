@@ -21,6 +21,10 @@ public abstract class Objective : MonoBehaviour {
 
     public float FinishSpan = .5f;
 
+    public int Score;
+    public float ScoreMultiplier = 1;
+    public int MultiplierPeriod = -1;
+
     private void Awake()
     {
         dependants = new List<Objective>();
@@ -81,6 +85,11 @@ public abstract class Objective : MonoBehaviour {
     private IEnumerator DeferFinish()
     {
         yield return new WaitForSeconds(FinishSpan);
+        ScoreSystem.IncreaseScore(Score);
+        if (MultiplierPeriod > 0)
+        {
+            ScoreSystem.SetMultiplier(ScoreMultiplier, MultiplierPeriod);
+        }
         if (dependants.Count > 0)
         {
             State = ObjectiveState.Finished;

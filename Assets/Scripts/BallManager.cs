@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
-    public GameObject ball;
+    public List<GameObject> balls;
     public GameObject bounds;
     public GameObject plunger;
     public GameObject ballPrefab;//used to generate new balls
@@ -14,29 +14,39 @@ public class BallManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        ballTransform = ball.transform.position;
+        ballTransform = balls[0].transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //given current prototype code, ball resets to plunger location if above bounds
-        if ((ball!=null)&&((ball.transform.position.y <= bounds.transform.position.y)))
+        int count = 0;
+        for (int i = 0; i < balls.Count; i++)
         {
-            Destroy(ball);//destroying ball when out of bounds
-            lives--;//decreasing lives when ball falls
-        }
-
-        //generate a new ball if other destroyed
-        if ((ball == null)&&(lives>0))
-        {
-            ball = CreateBall();
-            //plunger.GetComponent<Plunger>().SetBall(ball);//lets plunger know about new ball
-            //if (plunger != null)
+            if (balls[i].transform.position.y <= bounds.transform.position.y)
             {
-                //plunger.GetComponent<Plunger>().SetBall(ball);//lets plunger know about new ball
+                Destroy(balls[i]);//destroying ball when out of bounds
+                balls.RemoveAt(i);
+                i--;
+            }
+            else if (!balls[i].GetComponent<Rigidbody>().isKinematic)
+            {
+                count++;
             }
         }
+        //generate a new ball if other destroyed
+        if (count <= 0)
+        {
+            if (lives > 0)
+            {
+                lives--;
+                if (lives > 0)
+                {
+                    balls.Add(CreateBall());
+                }
+            }
+        }
+        
         //when lives run out, end game
             
 	}
@@ -58,5 +68,10 @@ public class BallManager : MonoBehaviour
             GUI.Label(new Rect(700, 10, 100, 20), "Lives: "+lives.ToString(), style);
         else if (lives<=0)//temporary, until game over screen finalized
             GUI.Label(new Rect(600, 10, 100, 20), "GAME OVER", style);
+    }
+
+    public void AddBall()
+    {
+        balls.Add(CreateBall());
     }
 }
