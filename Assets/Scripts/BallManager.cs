@@ -9,12 +9,14 @@ public class BallManager : MonoBehaviour
     public GameObject plunger;
     public GameObject ballPrefab;//used to generate new balls
     public int lives;//how many chances player gets to use ball
+    int LivesStart;//will store value of lives for restarting game
     Vector3 ballTransform;//position of ball at plunger for new balls to reference
 
 	// Use this for initialization
 	void Start ()
     {
         ballTransform = ball.transform.position;
+        LivesStart = lives;
 	}
 	
 	// Update is called once per frame
@@ -37,6 +39,13 @@ public class BallManager : MonoBehaviour
                 //plunger.GetComponent<Plunger>().SetBall(ball);//lets plunger know about new ball
             }
         }
+        //if game is over & R key hit, restart game
+        else if((lives<=0)&&(Input.GetKey(KeyCode.R)))
+        {
+            ScoreSystem.Score = 0;
+            ball = CreateBall();
+            lives = LivesStart;
+        }
         //when lives run out, end game
             
 	}
@@ -57,6 +66,9 @@ public class BallManager : MonoBehaviour
         if(lives>0)
             GUI.Label(new Rect(700, 10, 100, 20), "Lives: "+lives.ToString(), style);
         else if (lives<=0)//temporary, until game over screen finalized
-            GUI.Label(new Rect(600, 10, 100, 20), "GAME OVER", style);
+        {
+            GUI.Label(new Rect(300, 100, 100, 20), "GAME OVER", style);
+            GUI.Label(new Rect(275, 150, 100, 20), "Press R to restart", style);
+        }
     }
 }

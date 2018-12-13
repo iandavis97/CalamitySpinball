@@ -14795,6 +14795,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1e808b322d7312c49a7ccccde26bcce1,
     type: 3}
   m_PrefabInternal: {fileID: 864185401}
+--- !u!4 &864885171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 1e808b322d7312c49a7ccccde26bcce1,
+    type: 3}
+  m_PrefabInternal: {fileID: 1792687064}
 --- !u!1 &866269863
 GameObject:
   m_ObjectHideFlags: 0
@@ -14835,11 +14840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a97d3c189a18fe41b50f7e88c18634e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &864885171 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 1e808b322d7312c49a7ccccde26bcce1,
-    type: 3}
-  m_PrefabInternal: {fileID: 1792687064}
 --- !u!1 &868229369
 GameObject:
   m_ObjectHideFlags: 0
@@ -25724,6 +25724,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1e808b322d7312c49a7ccccde26bcce1,
     type: 3}
   m_PrefabInternal: {fileID: 1518185381}
+--- !u!4 &1518255469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 1e808b322d7312c49a7ccccde26bcce1,
+    type: 3}
+  m_PrefabInternal: {fileID: 482706445}
 --- !u!1 &1522642694
 GameObject:
   m_ObjectHideFlags: 0
@@ -25848,11 +25853,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1518255469 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 1e808b322d7312c49a7ccccde26bcce1,
-    type: 3}
-  m_PrefabInternal: {fileID: 482706445}
 --- !u!1001 &1530067265
 Prefab:
   m_ObjectHideFlags: 0
@@ -33467,7 +33467,7 @@ MonoBehaviour:
   bounds: {fileID: 1540911880}
   plunger: {fileID: 0}
   ballPrefab: {fileID: 1726542306702006, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
-  lives: 3
+  lives: 6
 --- !u!4 &2081500602
 Transform:
   m_ObjectHideFlags: 0

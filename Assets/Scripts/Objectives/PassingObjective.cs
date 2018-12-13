@@ -21,6 +21,8 @@ public class PassingObjective : Objective {
         Rigidbody vel = other.GetComponent<Rigidbody>();
         if (State == ObjectiveState.Enabled && other.gameObject.tag == "Ball" && vel != null && Vector3.Dot(vel.velocity, transform.forward) > 0)
         {
+            //increasing the score when objective cleared
+            ScoreSystem.IncreaseScore(1000);
             Finish();
         }
     }
