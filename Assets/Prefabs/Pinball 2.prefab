@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1805250599530972}
   m_LocalRotation: {x: -0, y: -0, z: 0.020785747, w: 0.99978393}
-  m_LocalPosition: {x: -5.16, y: -1.15, z: -4.768}
+  m_LocalPosition: {x: -3.65, y: -1.15, z: -4.768}
   m_LocalScale: {x: 0.31119156, y: 0.32815486, z: 0.3190767}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4602eecff73695d42a5e420ee8da8481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grav: {x: -9, y: 0, z: 0}
+  Grav: {x: -8.8, y: 0, z: 0}
 --- !u!114 &114655319003681192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0deafabe8dff11942afff09abea9b957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxVel: 22
+  MaxVel: 20.4
 --- !u!135 &135101556093296458
 SphereCollider:
   m_ObjectHideFlags: 1

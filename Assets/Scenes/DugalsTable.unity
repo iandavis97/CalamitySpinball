@@ -5921,8 +5921,6 @@ MonoBehaviour:
   HoldPosition: {fileID: 307471099}
   ReleaseAim: {fileID: 1228827083}
   ReleaseSpeed: 0
-  isVelRandom: 0
-  randomVelMagnitude: 0
 --- !u!135 &291947870
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15046,6 +15044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a97d3c189a18fe41b50f7e88c18634e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 2081500600}
 --- !u!1 &868229369
 GameObject:
   m_ObjectHideFlags: 0
@@ -29595,8 +29594,6 @@ MonoBehaviour:
   HoldPosition: {fileID: 804849532}
   ReleaseAim: {fileID: 733267271}
   ReleaseSpeed: 0
-  isVelRandom: 0
-  randomVelMagnitude: 0
 --- !u!135 &1688370420
 SphereCollider:
   m_ObjectHideFlags: 0
