@@ -16,6 +16,7 @@ public class ScoreSystem : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        score = 0;
 		messageManager = manager.GetComponent<MessageManager> ();
 	}
 	
@@ -32,10 +33,14 @@ public class ScoreSystem : MonoBehaviour {
 			return score;
 		}
 
-		set{
-			score = value;
-			messageManager.ChangeScore (score);
-		}
+        set
+        {
+            score = value;
+            if (messageManager != null)
+            {
+                messageManager.ChangeScore(score);
+            }
+        }
 	
 	}
 
@@ -49,10 +54,14 @@ public class ScoreSystem : MonoBehaviour {
 		get {
 			return ball;
 		}
-		set {
-			ball = value;
-			messageManager.ChangeBall (ball);
-		}
+        set
+        {
+            ball = value;
+            if (messageManager != null)
+            {
+                messageManager.ChangeBall(ball);
+            }
+        }
 	}
 
 

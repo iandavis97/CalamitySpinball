@@ -15,6 +15,7 @@ public class BallManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        ScoreSystem.Ball = lives;
         ballTransform = balls[0].transform.position;
 	}
 	
@@ -43,19 +44,18 @@ public class BallManager : MonoBehaviour
             if (lives > 0)
             {
                 lives--;
+                ScoreSystem.Ball = lives;
                 if (lives > 0)
                 {
                     balls.Add(CreateBall());
                 }
                 else
                 {
+                    //when lives run out, end game
                     SceneManager.LoadScene("Victory_Screen");
                 }
             }
         }
-        
-        //when lives run out, end game
-            
 	}
     public GameObject CreateBall()
     {
@@ -68,13 +68,16 @@ public class BallManager : MonoBehaviour
     //creates space to display the lives
     void OnGUI()
     {
-        GUIStyle style = new GUIStyle();//used to modify text size
-        style.fontSize = 50;
-        style.normal.textColor = Color.white;
-        if(lives>0)
-            GUI.Label(new Rect(700, 10, 100, 20), "Lives: "+lives.ToString(), style);
-        else if (lives<=0)//temporary, until game over screen finalized
-            GUI.Label(new Rect(600, 10, 100, 20), "GAME OVER", style);
+        if (ScoreSystem.MessageManager == null)
+        {
+            GUIStyle style = new GUIStyle();//used to modify text size
+            style.fontSize = 50;
+            style.normal.textColor = Color.white;
+            if (lives > 0)
+                GUI.Label(new Rect(700, 10, 100, 20), "Lives: " + lives.ToString(), style);
+            else if (lives <= 0)//temporary, until game over screen finalized
+                GUI.Label(new Rect(600, 10, 100, 20), "GAME OVER", style);
+        }
     }
 
     public void AddBall()
