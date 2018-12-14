@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpaceBoard.unity
     guid: a7899756ded8a8c499656a6a9b7566f7
+  - enabled: 1
+    path: Assets/Scenes/Caleb_Table.unity
+    guid: c73d9db19c3b06e4d8856e75f1908794
   m_configObjects: {}

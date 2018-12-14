@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallManager : MonoBehaviour
 {
@@ -45,6 +46,10 @@ public class BallManager : MonoBehaviour
                 if (lives > 0)
                 {
                     balls.Add(CreateBall());
+                }
+                else
+                {
+                    SceneManager.LoadScene("Victory_Screen");
                 }
             }
         }
