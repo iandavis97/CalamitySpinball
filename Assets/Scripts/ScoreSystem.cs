@@ -6,14 +6,17 @@ using UnityEngine.UI;
 public class ScoreSystem : MonoBehaviour {
 
 	private static int score=0;
+	private static int ball=3;
 	private static float multiplier=1;
 	private static int timerEnd = 0;
     public GameObject manager;//reference to manager script attached to, to get text
 
+	public static MessageManager messageManager;
+
 	// Use this for initialization
 	void Start ()
     {
-        
+		messageManager = manager.GetComponent<MessageManager> ();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +24,6 @@ public class ScoreSystem : MonoBehaviour {
 
 		if (System.DateTime.Today.Second >= timerEnd && timerEnd!=-1)
 			multiplier = 1;
-        manager.GetComponent<Text>().text = score.ToString();//displaying the score
 	}
 
 	public static int Score{
@@ -32,9 +34,27 @@ public class ScoreSystem : MonoBehaviour {
 
 		set{
 			score = value;
+			messageManager.ChangeScore (score);
 		}
 	
 	}
+
+	public static MessageManager MessageManager {
+		get {
+			return messageManager;
+		}
+	}
+
+	public static int Ball {
+		get {
+			return ball;
+		}
+		set {
+			ball = value;
+			messageManager.ChangeBall (ball);
+		}
+	}
+
 
 	public static float Multiplier{
 
@@ -52,6 +72,10 @@ public class ScoreSystem : MonoBehaviour {
 	{
 
 		score += (int)(amount*multiplier);
+        if (messageManager != null)
+        {
+            messageManager.ChangeScore(score);
+        }
 	}
 
 	/// <summary>
@@ -92,4 +116,16 @@ public class ScoreSystem : MonoBehaviour {
 			timerEnd = -1;
 
 	}
+
+    //creates space to display the score
+    void OnGUI()
+    {
+        if (messageManager == null)
+        {
+            GUIStyle style = new GUIStyle();//used to modify text size
+            style.fontSize = 50;
+            style.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 100, 20), Score.ToString(), style);
+        }
+    }
 }

@@ -20,7 +20,7 @@ public class Bumper : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter(Collision other)
+	protected void OnCollisionEnter(Collision other)
 	{
 		Vector3 forceDir = Vector3.Normalize(other.transform.position - this.transform.position) * force;
 		other.gameObject.GetComponent<Rigidbody>().AddForce(forceDir, ForceMode.Impulse);
