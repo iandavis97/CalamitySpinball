@@ -6,14 +6,18 @@ using UnityEngine.UI;
 public class ScoreSystem : MonoBehaviour {
 
 	private static int score=0;
+	private static int ball=3;
 	private static float multiplier=1;
 	private static int timerEnd = 0;
-    //public GameObject manager;//reference to manager script attached to, to get text
+    public GameObject manager;//reference to manager script attached to, to get text
+
+	public static MessageManager messageManager;
 
 	// Use this for initialization
 	void Start ()
     {
-        
+        score = 0;
+		messageManager = manager.GetComponent<MessageManager> ();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +25,6 @@ public class ScoreSystem : MonoBehaviour {
 
 		if (System.DateTime.Today.Second >= timerEnd && timerEnd!=-1)
 			multiplier = 1;
-        //manager.GetComponent<Text>().text = score.ToString();//displaying the score
 	}
 
 	public static int Score{
@@ -30,11 +33,37 @@ public class ScoreSystem : MonoBehaviour {
 			return score;
 		}
 
-		set{
-			score = value;
-		}
+        set
+        {
+            score = value;
+            if (messageManager != null)
+            {
+                messageManager.ChangeScore(score);
+            }
+        }
 	
 	}
+
+	public static MessageManager MessageManager {
+		get {
+			return messageManager;
+		}
+	}
+
+	public static int Ball {
+		get {
+			return ball;
+		}
+        set
+        {
+            ball = value;
+            if (messageManager != null)
+            {
+                messageManager.ChangeBall(ball);
+            }
+        }
+	}
+
 
 	public static float Multiplier{
 
@@ -51,7 +80,11 @@ public class ScoreSystem : MonoBehaviour {
 	public static void IncreaseScore(int amount)
 	{
 
-		Score += (int)(amount*multiplier);
+		score += (int)(amount*multiplier);
+        if (messageManager != null)
+        {
+            messageManager.ChangeScore(score);
+        }
 	}
 
 	/// <summary>
@@ -96,9 +129,12 @@ public class ScoreSystem : MonoBehaviour {
     //creates space to display the score
     void OnGUI()
     {
-        GUIStyle style = new GUIStyle();//used to modify text size
-        style.fontSize = 50;
-        style.normal.textColor = Color.white;
-        GUI.Label(new Rect(10, 10, 100, 20), Score.ToString(),style);
+        if (messageManager == null)
+        {
+            GUIStyle style = new GUIStyle();//used to modify text size
+            style.fontSize = 50;
+            style.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 100, 20), Score.ToString(), style);
+        }
     }
 }

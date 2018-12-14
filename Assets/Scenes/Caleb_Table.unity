@@ -520,6 +520,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 64172667669402020, guid: ac1b0f504d15f454a9ec9a06c36c070a,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 71c8daee6b607b748aeb21e215a5c636, type: 3}
+    - target: {fileID: 33558051339827140, guid: ac1b0f504d15f454a9ec9a06c36c070a,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 71c8daee6b607b748aeb21e215a5c636, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac1b0f504d15f454a9ec9a06c36c070a, type: 2}
   m_IsPrefabAsset: 0
@@ -2972,10 +2982,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d0e4090babac942ad884ce30e0942c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 485852935}
+  balls:
+  - {fileID: 485852935}
   bounds: {fileID: 1267788370}
   plunger: {fileID: 0}
   ballPrefab: {fileID: 1726542306702006, guid: 15d04a208d0054e4eb1209ae56a7365f, type: 2}
+  lives: 3
 --- !u!4 &1667162346
 Transform:
   m_ObjectHideFlags: 0
@@ -3082,6 +3094,16 @@ Prefab:
       propertyPath: m_Name
       value: Caleb_OneTimeSideBumper (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 64172667669402020, guid: ac1b0f504d15f454a9ec9a06c36c070a,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 71c8daee6b607b748aeb21e215a5c636, type: 3}
+    - target: {fileID: 33558051339827140, guid: ac1b0f504d15f454a9ec9a06c36c070a,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 71c8daee6b607b748aeb21e215a5c636, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac1b0f504d15f454a9ec9a06c36c070a, type: 2}
   m_IsPrefabAsset: 0

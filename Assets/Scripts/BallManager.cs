@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallManager : MonoBehaviour
 {
@@ -9,24 +10,20 @@ public class BallManager : MonoBehaviour
     public GameObject plunger;
     public GameObject ballPrefab;//used to generate new balls
     public int lives;//how many chances player gets to use ball
-    int LivesStart;//will store value of lives for restarting game
     Vector3 ballTransform;//position of ball at plunger for new balls to reference
 
 	// Use this for initialization
 	void Start ()
     {
-<<<<<<< HEAD
-        ballTransform = ball.transform.position;
-        LivesStart = lives;
-=======
+        ScoreSystem.Ball = lives;
         ballTransform = balls[0].transform.position;
->>>>>>> 15f46a620393855c0506697d4cb12fce9ec4f6f0
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         int count = 0;
+        bool killed = false;
         for (int i = 0; i < balls.Count; i++)
         {
             if (balls[i].transform.position.y <= bounds.transform.position.y)
@@ -34,6 +31,7 @@ public class BallManager : MonoBehaviour
                 Destroy(balls[i]);//destroying ball when out of bounds
                 balls.RemoveAt(i);
                 i--;
+                killed = true;
             }
             else if (!balls[i].GetComponent<Rigidbody>().isKinematic)
             {
@@ -41,30 +39,23 @@ public class BallManager : MonoBehaviour
             }
         }
         //generate a new ball if other destroyed
-        if (count <= 0)
+        if (count <= 0 && killed)
         {
             if (lives > 0)
             {
                 lives--;
+                ScoreSystem.Ball = lives;
                 if (lives > 0)
                 {
                     balls.Add(CreateBall());
                 }
+                else
+                {
+                    //when lives run out, end game
+                    SceneManager.LoadScene("Victory_Screen");
+                }
             }
         }
-<<<<<<< HEAD
-        //if game is over & R key hit, restart game
-        else if((lives<=0)&&(Input.GetKey(KeyCode.R)))
-        {
-            ScoreSystem.Score = 0;
-            ball = CreateBall();
-            lives = LivesStart;
-        }
-=======
-        
->>>>>>> 15f46a620393855c0506697d4cb12fce9ec4f6f0
-        //when lives run out, end game
-            
 	}
     public GameObject CreateBall()
     {
@@ -77,15 +68,15 @@ public class BallManager : MonoBehaviour
     //creates space to display the lives
     void OnGUI()
     {
-        GUIStyle style = new GUIStyle();//used to modify text size
-        style.fontSize = 50;
-        style.normal.textColor = Color.white;
-        if(lives>0)
-            GUI.Label(new Rect(700, 10, 100, 20), "Lives: "+lives.ToString(), style);
-        else if (lives<=0)//temporary, until game over screen finalized
+        if (ScoreSystem.MessageManager == null)
         {
-            GUI.Label(new Rect(300, 100, 100, 20), "GAME OVER", style);
-            GUI.Label(new Rect(275, 150, 100, 20), "Press R to restart", style);
+            GUIStyle style = new GUIStyle();//used to modify text size
+            style.fontSize = 50;
+            style.normal.textColor = Color.white;
+            if (lives > 0)
+                GUI.Label(new Rect(700, 10, 100, 20), "Lives: " + lives.ToString(), style);
+            else if (lives <= 0)//temporary, until game over screen finalized
+                GUI.Label(new Rect(600, 10, 100, 20), "GAME OVER", style);
         }
     }
 
