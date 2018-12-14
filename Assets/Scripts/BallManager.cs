@@ -21,6 +21,7 @@ public class BallManager : MonoBehaviour
 	void Update ()
     {
         int count = 0;
+        bool killed = false;
         for (int i = 0; i < balls.Count; i++)
         {
             if (balls[i].transform.position.y <= bounds.transform.position.y)
@@ -28,6 +29,7 @@ public class BallManager : MonoBehaviour
                 Destroy(balls[i]);//destroying ball when out of bounds
                 balls.RemoveAt(i);
                 i--;
+                killed = true;
             }
             else if (!balls[i].GetComponent<Rigidbody>().isKinematic)
             {
@@ -35,7 +37,7 @@ public class BallManager : MonoBehaviour
             }
         }
         //generate a new ball if other destroyed
-        if (count <= 0)
+        if (count <= 0 && killed)
         {
             if (lives > 0)
             {
