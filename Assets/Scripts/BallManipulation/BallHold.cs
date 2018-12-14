@@ -22,6 +22,12 @@ public class BallHold : Detector {
     // The release timer
     private float timer;
 
+    // is release velocity random?
+    [SerializeField]
+    bool isVelRandom = false;
+    // if velocity is random, what is its max magnitude
+    [SerializeField]
+    float randomVelMagnitude;
 	// Use this for initialization
 	void Start () {
         // Default transform is the one on the object
@@ -68,7 +74,20 @@ public class BallHold : Detector {
             return;
         }
         held.isKinematic = false;
-        held.velocity = (ReleaseAim.position - transform.position).normalized * ReleaseSpeed;
+        if (!isVelRandom)
+        {
+            //held.velocity = ReleaseVelocity;
+            held.velocity = (ReleaseAim.position - transform.position).normalized * ReleaseSpeed;
+        }
+        else
+        {
+            Vector3 randomVel = new Vector3();
+            randomVel += transform.right * Random.Range(-1.0f, 1.0f);
+            randomVel += transform.forward * Random.Range(-1.0f, 1.0f);
+            randomVel.Normalize();
+            randomVel *= randomVelMagnitude;
+            held.velocity = randomVel;
+        }
         held = null;
     }
 
