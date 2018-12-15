@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallHold : Detector {
 
+    public int scoreToAdd;//increase score by this amt when ball released
+
     // Time for which the ball is held
     public float HoldPeriod = -1;
 
@@ -89,6 +91,8 @@ public class BallHold : Detector {
             held.velocity = randomVel;
         }
         held = null;
+
+        ScoreSystem.IncreaseScore(scoreToAdd);
     }
 
 }
