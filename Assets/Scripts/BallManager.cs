@@ -10,6 +10,7 @@ public class BallManager : MonoBehaviour
     public GameObject plunger;
     public GameObject ballPrefab;//used to generate new balls
     public int lives;//how many chances player gets to use ball
+	public int timeAfterGameOver;
     Vector3 ballTransform;//position of ball at plunger for new balls to reference
 
 	AudioSource audio;
@@ -47,7 +48,8 @@ public class BallManager : MonoBehaviour
         {
             if (lives > 0)
             {
-                lives--;
+				if(PaddleBehavior.Touched)
+                	lives--;
                 ScoreSystem.Ball = lives;
                 if (lives > 0)
                 {
@@ -57,15 +59,17 @@ public class BallManager : MonoBehaviour
                 else
                 {
                     //when lives run out, end game
+					WaitForTime(timeAfterGameOver);
                     SceneManager.LoadScene("Victory_Screen");
                 }
+				PaddleBehavior.Touched = false;
             }
         }
 	}
     public GameObject CreateBall()
     {
         GameObject temp;
-		audio.PlayOneShot (ballRespawn);
+		PlaySound (ballRespawn);
         //should generate a new ball for when another is destroyed
         temp=Instantiate(ballPrefab);
         temp.transform.position = ballTransform;
@@ -94,5 +98,11 @@ public class BallManager : MonoBehaviour
 	IEnumerator WaitForTime(int seconds)
 	{
 		yield return new WaitForSeconds (seconds);
+	}
+
+	void PlaySound(AudioClip ac){
+		if (audio != null && ac != null) {
+			audio.PlayOneShot (ac);
+		}
 	}
 }

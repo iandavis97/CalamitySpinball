@@ -29,7 +29,7 @@ public class Abduction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (active && !Captured() && abdTime<0) {
+		if ((active && !Captured())||abdTime>0) {
 			light.enabled = true;
 		} else
 			light.enabled=false;

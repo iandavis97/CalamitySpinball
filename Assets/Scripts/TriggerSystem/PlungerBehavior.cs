@@ -46,6 +46,7 @@ public class PlungerBehavior : Behavior {
             if (lerp < 0)
             {
                 lerp = 0;
+				rigid.collisionDetectionMode = CollisionDetectionMode.Continuous;
             }
             else if (!rigid.isKinematic)
             {
@@ -54,6 +55,7 @@ public class PlungerBehavior : Behavior {
             else
             {
                 rigid.MovePosition(Vector3.Lerp(RestPos.position, high, lerp));
+				rigid.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             }
         }
     }
@@ -86,4 +88,6 @@ public class PlungerBehavior : Behavior {
     {
         Activate(args != 0);
     }
+
+
 }

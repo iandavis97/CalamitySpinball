@@ -13,6 +13,8 @@ public class PaddleBehavior : Behavior {
     private bool active;
     private Rigidbody rigid;
 
+	static bool touched = false;
+
     // Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody>();
@@ -61,4 +63,20 @@ public class PaddleBehavior : Behavior {
         Activate(args != 0);
     }
 
+	void OnCollisionEnter(Collision other){
+
+		if(other.gameObject.tag=="Ball")
+			touched = true;
+
+	}
+
+	public static bool Touched
+	{
+		get{
+			return touched;
+		}
+		set{
+			touched = value;
+		}
+	}
 }
