@@ -4740,11 +4740,6 @@ Prefab:
       propertyPath: m_Name
       value: Pinball
       objectReference: {fileID: 0}
-    - target: {fileID: 54336489450970042, guid: 5460d717f7b25f740b138777db371428,
-        type: 2}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5460d717f7b25f740b138777db371428, type: 2}
   m_IsPrefabAsset: 0

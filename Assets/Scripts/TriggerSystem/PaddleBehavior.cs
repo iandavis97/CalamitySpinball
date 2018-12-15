@@ -27,7 +27,10 @@ public class PaddleBehavior : Behavior {
             if (lerp > 1)
             {
                 lerp = 1;
+				rigid.collisionDetectionMode = CollisionDetectionMode.Continuous;
             }
+			else
+				rigid.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         }
         else
         {
@@ -35,7 +38,10 @@ public class PaddleBehavior : Behavior {
             if (lerp < 0)
             {
                 lerp = 0;
+				rigid.collisionDetectionMode = CollisionDetectionMode.Continuous;
             }
+			else
+				rigid.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         }
         rigid.MoveRotation(Quaternion.Slerp(RestPos.rotation, PlayPos.rotation, lerp));
 	}
