@@ -22,8 +22,8 @@ public class SlingShot : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		float dis = Vector3.Distance(other.collider.gameObject.transform.position,gameObject.transform.position)/2.6f;
-		Vector3 forceDir = Vector3.Normalize(direction.transform.position - this.transform.position) * force;
+		float dis = 2.6f/Vector3.Distance(other.collider.gameObject.transform.position,gameObject.transform.position);
+		Vector3 forceDir = Vector3.Normalize(direction.transform.position - this.transform.position) * force * Mathf.Min(dis,1);
 		other.gameObject.GetComponent<Rigidbody>().AddForce(forceDir, ForceMode.Impulse);
         ScoreSystem.IncreaseScore(scoreToAdd);
 	}
