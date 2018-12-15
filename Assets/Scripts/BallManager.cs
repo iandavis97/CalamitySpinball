@@ -12,11 +12,15 @@ public class BallManager : MonoBehaviour
     public int lives;//how many chances player gets to use ball
     Vector3 ballTransform;//position of ball at plunger for new balls to reference
 
+	AudioSource audio;
+	public AudioClip ballRespawn;
+
 	// Use this for initialization
 	void Start ()
     {
         ScoreSystem.Ball = lives;
         ballTransform = balls[0].transform.position;
+		audio = gameObject.GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +51,7 @@ public class BallManager : MonoBehaviour
                 ScoreSystem.Ball = lives;
                 if (lives > 0)
                 {
+					WaitForTime (1);
                     balls.Add(CreateBall());
                 }
                 else
@@ -60,6 +65,7 @@ public class BallManager : MonoBehaviour
     public GameObject CreateBall()
     {
         GameObject temp;
+		audio.PlayOneShot (ballRespawn);
         //should generate a new ball for when another is destroyed
         temp=Instantiate(ballPrefab);
         temp.transform.position = ballTransform;
@@ -84,4 +90,9 @@ public class BallManager : MonoBehaviour
     {
         balls.Add(CreateBall());
     }
+
+	IEnumerator WaitForTime(int seconds)
+	{
+		yield return new WaitForSeconds (seconds);
+	}
 }

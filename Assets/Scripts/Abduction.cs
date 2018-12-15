@@ -38,6 +38,7 @@ public class Abduction : MonoBehaviour {
 
 		if (abdTime >= -1 && abdTime - Time.deltaTime < -1) {
 			SpawnNewBall ();
+			cBall.GetComponent<Rigidbody> ().isKinematic = true;
 			GameObject music=GameObject.FindGameObjectWithTag ("Music");
 			music.GetComponent<AudioSource> ().Play();
 		}
@@ -75,6 +76,7 @@ public class Abduction : MonoBehaviour {
 		if (Captured()) {
 			cBall.GetComponent<Rigidbody> ().velocity = Vector3.zero;
 			cBall = null;
+			cBall.GetComponent<Rigidbody> ().isKinematic = false;
 		}
 	}
 

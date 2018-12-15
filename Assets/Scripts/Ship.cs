@@ -47,30 +47,32 @@ public class Ship : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		time = 0.5f;
+		if (forceField.health <= 0) {
+			time = 0.5f;
 
-		health -= 20;
+			health -= 20;
 
-		GameObject other = col.gameObject;
+			GameObject other = col.gameObject;
 
-		Vector3 dir=other.transform.position-transform.position;
-		dir.Normalize ();
+			Vector3 dir = other.transform.position - transform.position;
+			dir.Normalize ();
 
-		other.GetComponent<Rigidbody> ().AddForce (dir*1.5f);
+			other.GetComponent<Rigidbody> ().AddForce (dir * 1.5f);
 
-		if (health > 0) {
-			ScoreSystem.MessageManager.SetMessage ("Hull at " + health.ToString ("00") + "%",5);
-			ScoreSystem.IncreaseScore (500);
-			audio.pitch=2-health/100.00f;
-			audio.PlayOneShot (hit);
-		} 
-		else {
-			ScoreSystem.MessageManager.SetMessage ("Hull Breached",5);
-			ScoreSystem.IncreaseScore (5000);
-			audio.pitch=2;
-			audio.PlayOneShot (hit);
-			audio.pitch = 1;
-			audio.PlayOneShot (down);
+			if (health > 0) {
+				ScoreSystem.MessageManager.SetMessage ("Hull at " + health.ToString ("00") + "%", 5);
+				ScoreSystem.IncreaseScore (500);
+				audio.pitch = 2 - health / 100.00f;
+				audio.PlayOneShot (hit);
+			} else {
+				ScoreSystem.MessageManager.SetMessage ("Hull Breached", 5);
+				ScoreSystem.IncreaseScore (5000);
+				ScoreSystem.Ball = ScoreSystem.Ball + 1;
+				audio.pitch = 2;
+				audio.PlayOneShot (hit);
+				audio.pitch = 1;
+				audio.PlayOneShot (down);
+			}
 		}
 	}
 }
