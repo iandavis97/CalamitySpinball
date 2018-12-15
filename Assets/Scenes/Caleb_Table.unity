@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -530,6 +530,11 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 71c8daee6b607b748aeb21e215a5c636, type: 3}
+    - target: {fileID: 114760950778782876, guid: ac1b0f504d15f454a9ec9a06c36c070a,
+        type: 2}
+      propertyPath: scoreToAdd
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac1b0f504d15f454a9ec9a06c36c070a, type: 2}
   m_IsPrefabAsset: 0
@@ -923,6 +928,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4bfa659758e4df440a40d749f2ba2299, type: 2}
+    - target: {fileID: 114930408585833678, guid: 29dbcc9d787f7cc4f8a3f350ed1b1fb0,
+        type: 2}
+      propertyPath: scoreToAdd
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29dbcc9d787f7cc4f8a3f350ed1b1fb0, type: 2}
   m_IsPrefabAsset: 0
@@ -1996,6 +2006,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1058506088}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1197310106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1197310108}
+  - component: {fileID: 1197310107}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1197310107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197310106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a97d3c189a18fe41b50f7e88c18634e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1197310106}
+--- !u!4 &1197310108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197310106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.935219, y: -37.090546, z: -4.144243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215482376
 GameObject:
@@ -3504,6 +3555,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4bfa659758e4df440a40d749f2ba2299, type: 2}
+    - target: {fileID: 114930408585833678, guid: 29dbcc9d787f7cc4f8a3f350ed1b1fb0,
+        type: 2}
+      propertyPath: scoreToAdd
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29dbcc9d787f7cc4f8a3f350ed1b1fb0, type: 2}
   m_IsPrefabAsset: 0
