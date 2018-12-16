@@ -25,6 +25,10 @@ public abstract class Objective : MonoBehaviour {
     public float ScoreMultiplier = 1;
     public int MultiplierPeriod = -1;
 
+    public string OnAvailable;
+    public string OnComplete;
+    public float AvailMessageTimer;
+
     private void Awake()
     {
         dependants = new List<Objective>();
@@ -46,6 +50,10 @@ public abstract class Objective : MonoBehaviour {
     {
         State = ObjectiveState.JustFinished;
         OnStateChange();
+        if (OnComplete != "" && FinishSpan > 0 && ScoreSystem.MessageManager != null)
+        {
+            ScoreSystem.MessageManager.SetMessage(OnComplete, FinishSpan);
+        }
         StartCoroutine(DeferFinish());
     }
 
@@ -59,6 +67,10 @@ public abstract class Objective : MonoBehaviour {
             {
                 State = ObjectiveState.Locked;
             }
+        }
+        if(State == ObjectiveState.Enabled && OnAvailable != "" && ScoreSystem.MessageManager != null)
+        {
+            ScoreSystem.MessageManager.SetMessage(OnAvailable, AvailMessageTimer);
         }
         OnStateChange();
     }
