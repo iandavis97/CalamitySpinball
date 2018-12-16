@@ -15,7 +15,8 @@ public class BallManager : MonoBehaviour
 
 	AudioSource audio;
 	public AudioClip ballRespawn;
-
+    public delegate void VoidZero();
+    public static event VoidZero OnLoseLife;
 	// Use this for initialization
 	void Start ()
     {
@@ -49,7 +50,10 @@ public class BallManager : MonoBehaviour
             if (lives > 0)
             {
 				if(PaddleBehavior.Touched)
+                {
                 	lives--;
+                    OnLoseLife();
+                }
                 ScoreSystem.Ball = lives;
                 if (lives > 0)
                 {

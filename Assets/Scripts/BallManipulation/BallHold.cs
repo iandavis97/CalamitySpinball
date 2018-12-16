@@ -30,6 +30,11 @@ public class BallHold : Detector {
     // if velocity is random, what is its max magnitude
     [SerializeField]
     float randomVelMagnitude;
+    [SerializeField]
+    AudioClip capture;
+    [SerializeField]
+    AudioClip release;
+    AudioSource source;
 	// Use this for initialization
 	void Start () {
         // Default transform is the one on the object
@@ -37,6 +42,7 @@ public class BallHold : Detector {
         {
             HoldPosition = transform;
         }
+        source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -65,12 +71,18 @@ public class BallHold : Detector {
             held.velocity = Vector3.zero;
             timer = HoldPeriod;
             Activate(true);
+            source.clip = capture;
+            source.Play();
         }
     }
 
     // Releases the ball
     public void Release()
     {
+        // play releasing sound
+        source.Stop();
+        source.clip = release;
+        source.Play();
         if(!Holding)
         {
             return;

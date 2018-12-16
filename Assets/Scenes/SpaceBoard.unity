@@ -422,7 +422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &127045848
 Light:
   m_ObjectHideFlags: 0
@@ -433,7 +433,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.21681976, g: 1, b: 0, a: 1}
-  m_Intensity: 62.37
+  m_Intensity: 3.87
   m_Range: 10
   m_SpotAngle: 18.6
   m_CookieSize: 10
@@ -665,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &169619011
 Light:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.21681976, g: 1, b: 0, a: 1}
-  m_Intensity: 62.37
+  m_Intensity: 14.5
   m_Range: 10
   m_SpotAngle: 18.6
   m_CookieSize: 10
@@ -731,7 +731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &192665543
 Transform:
   m_ObjectHideFlags: 0
@@ -755,7 +755,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.21681976, g: 1, b: 0, a: 1}
-  m_Intensity: 62.37
+  m_Intensity: 14.5
   m_Range: 10
   m_SpotAngle: 18.6
   m_CookieSize: 10
@@ -1066,7 +1066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &348682010
 Light:
   m_ObjectHideFlags: 0
@@ -1077,7 +1077,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.21681976, g: 1, b: 0, a: 1}
-  m_Intensity: 62.37
+  m_Intensity: 14.5
   m_Range: 10
   m_SpotAngle: 18.6
   m_CookieSize: 10
@@ -4894,7 +4894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1245700921
 Light:
   m_ObjectHideFlags: 0
@@ -4905,7 +4905,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.21681976, g: 1, b: 0, a: 1}
-  m_Intensity: 62.37
+  m_Intensity: 3.87
   m_Range: 10
   m_SpotAngle: 18.6
   m_CookieSize: 10
@@ -6542,7 +6542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1745702923
 Light:
   m_ObjectHideFlags: 0
@@ -6553,7 +6553,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.21681976, g: 1, b: 0, a: 1}
-  m_Intensity: 62.37
+  m_Intensity: 3.87
   m_Range: 10
   m_SpotAngle: 18.6
   m_CookieSize: 10
