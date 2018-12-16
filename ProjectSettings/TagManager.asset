@@ -11,6 +11,7 @@ TagManager:
   - BallManager
   - Star
   - Music
+  - Gate
   layers:
   - Default
   - TransparentFX

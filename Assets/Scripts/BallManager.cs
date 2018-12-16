@@ -45,7 +45,6 @@ public class BallManager : MonoBehaviour
             {
                 count++;
             }
-        }
 
         //generate a new ball if other destroyed
         if (count <= 0 && killed)

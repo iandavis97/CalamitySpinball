@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour 
+public class Diamond : MonoBehaviour 
 {
 	CalebObjectiveManager manager;
-	// Use this for initialization
-	void Start () 
+	void Start()
 	{
 		manager = GetComponentInParent<CalebObjectiveManager>();
 	}
-	
 	// Update is called once per frame
 	void Update () 
 	{
@@ -21,8 +19,8 @@ public class Key : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Ball"))
 		{
-			manager.RemoveKey();
 			gameObject.SetActive(false);
+			ScoreSystem.IncreaseScore(1000);
 		}
 	}
 }

@@ -2,27 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour 
+public class ResetTrigger : MonoBehaviour 
 {
 	CalebObjectiveManager manager;
+	Diamond diamond;
 	// Use this for initialization
 	void Start () 
 	{
 		manager = GetComponentInParent<CalebObjectiveManager>();
+		diamond = FindObjectOfType<Diamond>();
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
-		transform.localRotation *= Quaternion.AngleAxis(50 * Time.deltaTime, Vector3.up);
+	void Update () {
+		
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.CompareTag("Ball"))
+		if (other.gameObject.CompareTag("Ball") && !diamond.isActiveAndEnabled)
 		{
-			manager.RemoveKey();
-			gameObject.SetActive(false);
+			manager.ResetObjective();
 		}
 	}
 }
