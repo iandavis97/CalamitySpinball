@@ -54,6 +54,7 @@ public class Satellite : MonoBehaviour {
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.tag == "Ball"&&spinTime<0) {
 			spinTime = 2;
+			RandomTransmission ();
 		}
 	}
 

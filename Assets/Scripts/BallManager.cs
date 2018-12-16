@@ -13,6 +13,8 @@ public class BallManager : MonoBehaviour
 	public int timeAfterGameOver;
     Vector3 ballTransform;//position of ball at plunger for new balls to reference
 
+	float waitTimer=-1;
+
 	AudioSource audio;
 	public AudioClip ballRespawn;
     public delegate void VoidZero();
@@ -44,31 +46,33 @@ public class BallManager : MonoBehaviour
                 count++;
             }
         }
+
         //generate a new ball if other destroyed
         if (count <= 0 && killed)
         {
             if (lives > 0)
             {
-				if(PaddleBehavior.Touched)
-                {
+				if(PaddleBehavior.Touched && waitTimer<0)
                 	lives--;
                     OnLoseLife();
                 }
                 ScoreSystem.Ball = lives;
-                if (lives > 0)
-                {
-					WaitForTime (1);
-                    balls.Add(CreateBall());
-                }
-                else
-                {
-                    //when lives run out, end game
-					WaitForTime(timeAfterGameOver);
-                    SceneManager.LoadScene("Victory_Screen");
-                }
+				if (lives > 0) {
+					balls.Add (CreateBall ());
+				} else {
+					//when lives run out, end game
+					BroadcastMessage("GameOver");
+					waitTimer = timeAfterGameOver;
+				}
 				PaddleBehavior.Touched = false;
             }
         }
+
+		float dTime = Time.deltaTime;
+		if(waitTimer>=0&&waitTimer-dTime<0)
+			SceneManager.LoadScene("Victory_Screen");
+		waitTimer -= dTime;
+
 	}
     public GameObject CreateBall()
     {
