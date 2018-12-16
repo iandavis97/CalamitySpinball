@@ -58,7 +58,7 @@ public class BallManager : MonoBehaviour
 					balls.Add (CreateBall ());
 				} else {
 					//when lives run out, end game
-
+					BroadcastMessage("GameOver");
 					waitTimer = timeAfterGameOver;
 				}
 				PaddleBehavior.Touched = false;
