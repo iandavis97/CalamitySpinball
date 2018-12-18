@@ -75,8 +75,9 @@ public class Abduction : MonoBehaviour {
 	public void DropBall(){
 		if (Captured()) {
 			cBall.GetComponent<Rigidbody> ().velocity = Vector3.zero;
-			cBall = null;
 			cBall.GetComponent<Rigidbody> ().isKinematic = false;
+			cBall = null;
+			active = true;
 		}
 	}
 

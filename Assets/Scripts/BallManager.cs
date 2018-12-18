@@ -51,8 +51,10 @@ public class BallManager : MonoBehaviour
         {
                 if (lives > 0)
                 {
-                    if (PaddleBehavior.Touched && waitTimer < 0)
-                        lives--;
+					if (PaddleBehavior.Touched && waitTimer < 0) {
+						ScoreSystem.Ball = lives;
+						lives--;
+					}
                     if (OnLoseLife != null)
                     {
                         OnLoseLife();
