@@ -20,7 +20,7 @@ public class BallManager : MonoBehaviour
     public delegate void VoidZero();
     public static event VoidZero OnLoseLife;
 	// Use this for initialization
-	void Awake ()
+	void Start ()
     {
         ScoreSystem.Ball = lives;
         ballTransform = balls[0].transform.position;
@@ -49,25 +49,19 @@ public class BallManager : MonoBehaviour
         //generate a new ball if other destroyed
         if (count <= 0 && killed)
         {
-                if (lives > 0)
-                {
-                    if (PaddleBehavior.Touched && waitTimer < 0)
-                        lives--;
-                    if (OnLoseLife != null)
-                    {
-                        OnLoseLife();
-                    }
+            if (lives > 0)
+            {
+				if(PaddleBehavior.Touched && waitTimer<0)
+                	lives--;
+                    OnLoseLife();
                 }
                 ScoreSystem.Ball = lives;
 				if (lives > 0) {
 					balls.Add (CreateBall ());
 				} else {
-                    //when lives run out, end game
-                    if (ScoreSystem.MessageManager != null)
-                    {
-                        BroadcastMessage("GameOver");
-                    }
-                    waitTimer = timeAfterGameOver;
+					//when lives run out, end game
+					BroadcastMessage("GameOver");
+					waitTimer = timeAfterGameOver;
 				}
 				PaddleBehavior.Touched = false;
             }

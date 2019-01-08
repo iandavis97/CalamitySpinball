@@ -37,9 +37,4 @@ public class MusicManager : MonoBehaviour
 		audio.clip = clips[clipIndex];
 		audio.Play();		
 	}
-
-    private void OnDestroy()
-    {
-        BallManager.OnLoseLife -= ChangeMusic;
-    }
 }
